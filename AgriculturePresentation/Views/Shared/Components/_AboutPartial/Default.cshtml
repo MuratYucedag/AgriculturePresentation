@@ -1,0 +1,36 @@
+﻿@using EntityLayer.Concrete
+@model List<About> 
+
+<div class="about" id="about">
+    <div class="container">
+        <h3 class="tittle">Hakkımızda</h3>
+        <p class="heading-btm-w3ls">Dünya standartlarında tamamen organik & doğal ürünler.</p>
+        <div id="horizontalTab">
+            <ul class="resp-tabs-list">
+                <li>Tarihçe</li>
+                <li>Biz Kimiz</li>
+                <li>Müşteriler</li>
+            </ul>
+            @foreach (var item in Model)
+            {
+            <div class="resp-tabs-container">
+                <div class="tab1">
+                    <p class="para-w3-agileits">@item.AboutHistory</p>
+                </div>
+                <div class="tab2">
+                    <p class="para-w3-agileits">@item.AboutUs</p>
+                </div>
+                <div class="tab3">
+                    <div class="clients">
+                        <ul>
+                            <li><img src="~/web/images/c1.png" alt="clients" class="img-responsive" /><span>Sean Damon</span></li>
+                            <li><img src="~/web/images/c2.png" alt="clients" class="img-responsive" /><span>Natalie Barnes</span></li>
+                            <li><img src="~/web/images/c3.png" alt="clients" class="img-responsive" /><span>John Mccoist</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

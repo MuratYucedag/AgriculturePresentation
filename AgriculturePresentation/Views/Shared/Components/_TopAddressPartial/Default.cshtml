@@ -1,0 +1,13 @@
+﻿@using EntityLayer.Concrete
+@model List<Address> 
+
+<div class="w3l_header_left">
+    @foreach (var item in Model)
+    {
+    <ul>
+        <li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>@item.Description3</li>
+        <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> @item.Description4</li>
+        <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:info@example.com">@item.Description2</a></li>
+    </ul>
+    }
+</div>

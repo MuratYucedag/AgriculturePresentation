@@ -1,0 +1,101 @@
+﻿<script type="text/javascript" src="~/web/js/jquery-2.1.4.min.js"></script>
+<!--gallery-js -->
+<script src="~/web/js/jquery.picEyes.js"></script>
+<script>
+        $(function () {
+            //picturesEyes($('.demo li'));
+            $('.demo li').picEyes();
+        });
+</script>
+<!--//gallery-js -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="~/web/js/move-top.js"></script>
+<script type="text/javascript" src="~/web/js/easing.js"></script>
+<script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+</script>
+<!-- start-smoth-scrolling -->
+<!--light-box-files -->
+<script src="~/web/js/jquery.chocolat.js"></script>
+<!--//light-box-files -->
+<script type="text/javascript">
+        $(function () {
+            $('.gallery a').Chocolat();
+        });
+</script>
+<!-- //js -->
+<script src="~/web/js/responsiveslides.min.js"></script>
+<script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 3
+            $("#slider3").responsiveSlides({
+                auto: true,
+                pager: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+
+        });
+</script>
+
+
+<!--search-bar-->
+<script src="~/web/js/main.js"></script>
+<!--//search-bar-->
+<!--tabs-->
+<script src="~/web/js/easy-responsive-tabs.js"></script>
+<script>
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true,   // 100% fit in a container
+                closed: 'accordion', // Start closed if in accordion view
+                activate: function (event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#tabInfo');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
+            });
+            $('#verticalTab').easyResponsiveTabs({
+                type: 'vertical',
+                width: 'auto',
+                fit: true
+            });
+        });
+</script>
+<!--//tabs-->
+<!-- smooth scrolling -->
+<script type="text/javascript">
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+</script>
+
+
+<a href="#home" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+<script type="text/javascript" src="~/web/js/bootstrap-3.1.1.min.js"></script>

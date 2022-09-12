@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div id="chartdiv" style="width:800px; height:600px">
+            <h2>Burası Grafik Alanıdır</h2>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(DrawonLoad);
+
+    function DrawonLoad() {
+        $(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/Chart/ProductChart/',
+                success: function (chartsdata) {
+
+                    var Data = chartsdata.jsonlist;
+                    var data = new google.visualization.DataTable();
+
+                    data.addColumn('string', 'productname');
+                    data.addColumn('number', 'productvalue');
+
+                    for (var i = 0; i < Data.length; i++) {
+                        data.addRow([Data[i].productname, Data[i].productvalue]);
+                    }
+
+                    var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
+
+                    chart.draw(data,
+                        {
+                            title: "Google Chart Core Projesi",
+                            position: "top",
+                            fontsize: "16px"
+                        });
+                }
+            });
+        })
+    }
+
+</script>

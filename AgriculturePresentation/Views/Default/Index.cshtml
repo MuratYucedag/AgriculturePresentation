@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_HeadPartial")
+
+<body>
+
+    <!-- header -->
+    <div class="header">
+        <div class="container">
+            @await Component.InvokeAsync("_TopAddressPartial")
+
+            @await Component.InvokeAsync("_SocialMediaPartial")
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+
+    @await Component.InvokeAsync("_NavbarPartial")
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+        <!-- Modal1 -->
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>In Harvest</h4>
+                    <img src="~/web/images/banner1.jpg" alt=" " class="img-responsive">
+                    <h5>ENVIRONMENT & SUSTAINABILITY</h5>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @await Component.InvokeAsync("_AboutPartial")
+
+    @await Component.InvokeAsync("_ServicePartial")
+
+    @await Component.InvokeAsync("_TeamPartial")
+
+    @await Component.InvokeAsync("_AnnouncementPartial")
+
+    @await Component.InvokeAsync("_GalleryPartial")
+
+    <!--footer-->
+    <div class="contact-agile" id="contact">
+        <div class="container">
+
+            @await Component.InvokeAsync("_AddressPartial")
+
+            @await Html.PartialAsync("/Views/Default/SendMessage.cshtml")
+        </div>
+    </div>
+    @await Component.InvokeAsync("_MapPartial")
+
+    <div class="copy">
+        <p>© @DateTime.Now.Year In Harvest . Tüm hakları saklıdır | Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
+    </div>
+    <!-- js -->
+    @await Html.PartialAsync("/Views/Default/ScriptPartial.cshtml")
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿<div class="row">
+    <div class="col-md-7 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <!DOCTYPE html>
+                <html>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+                <body>
+                    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+                    <script>
+                        var xyValues = [
+                            { x: 50, y: 7 },
+                            { x: 85, y: 12 },
+                            { x: 70, y: 8 },
+                            { x: 80, y: 9 },
+                            { x: 90, y: 9 },
+                            { x: 100, y: 9 },
+                            { x: 110, y: 10 },
+                            { x: 120, y: 11 },
+                            { x: 130, y: 14 },
+                            { x: 140, y: 14 },
+                            { x: 150, y: 15 }
+                        ];
+
+                        new Chart("myChart", {
+                            type: "scatter",
+                            data: {
+                                datasets: [{
+                                    pointRadius: 4,
+                                    pointBackgroundColor: "rgb(0,0,255)",
+                                    data: xyValues
+                                }]
+                            },
+                            options: {
+                                legend: { display: false },
+                                scales: {
+                                    xAxes: [{ ticks: { min: 40, max: 160 } }],
+                                    yAxes: [{ ticks: { min: 6, max: 16 } }],
+                                }
+                            }
+                        });
+                    </script>
+
+                </body>
+            </html>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <!DOCTYPE html>
+                <html>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+                <body>
+                    <canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
+                    <script>
+                        var xValues = ["Buğday", "Arpa", "Mısır", "Mercimek", "Pirinç"];
+                        var yValues = [@ViewBag.v1, 49, 44, @ViewBag.v2, 15];
+                        var barColors = ["red", "green", "blue", "orange", "brown"];
+
+                        new Chart("myChart1", {
+                            type: "bar",
+                            data: {
+                                labels: xValues,
+                                datasets: [{
+                                    backgroundColor: barColors,
+                                    data: yValues
+                                }]
+                            },
+                            options: {
+                                legend: { display: false },
+                                title: {
+                                    display: true,
+                                    text: "2022 Bakliyat Üretimi"
+                                }
+                            }
+                        });
+                    </script>
+                </body>
+            </html>
+            </div>
+        </div>
+    </div>
+</div>
